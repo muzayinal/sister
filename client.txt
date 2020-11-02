@@ -1,0 +1,38 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package latihan;
+
+/**
+ *
+ * @author Muzayin
+ */
+
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+import java.util.Scanner;
+public class client {
+    public static void main(String[] args) throws RemoteException,
+        NotBoundException, MalformedURLException {
+        Scanner keyboard = new Scanner(System.in);
+        datainterface DATA =
+        (datainterface) Naming.lookup("rmi://localhost:1099/DATA");
+        System.out.println("Client Berhasil Terkoneksi Ke Server");
+        // memanggil Object
+        System.out.println("Masukkan Uang Anda : ");
+        int nominal = keyboard.nextInt();
+        
+        System.out.println("Masukkan Harga BBM : ");
+        int hargabbm = keyboard.nextInt();
+        int liter = nominal/hargabbm;
+        System.out.println("Jumlah Nominal Uang : "+nominal);
+        System.out.println("Harga BBM : "+hargabbm);
+        System.out.println("Jumlah Liter : "+liter);
+        DATA.hitungliter(liter);
+        System.out.println("Client Telah Selesai");
+     }
+}
