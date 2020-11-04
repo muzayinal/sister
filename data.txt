@@ -18,7 +18,7 @@ public class data extends UnicastRemoteObject implements datainterface
     }
 
     @Override
-        public void hitungliter(int liter) throws RemoteException{
+        public void hitungliter(float liter) throws RemoteException{
             System.out.println("Jumlah Liter : "+liter);
             
         }
