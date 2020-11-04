@@ -28,7 +28,7 @@ public class client {
         
         System.out.println("Masukkan Harga BBM : ");
         int hargabbm = keyboard.nextInt();
-        int liter = nominal/hargabbm;
+        float liter = nominal/hargabbm;
         System.out.println("Jumlah Nominal Uang : "+nominal);
         System.out.println("Harga BBM : "+hargabbm);
         System.out.println("Jumlah Liter : "+liter);
